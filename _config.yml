@@ -11,8 +11,8 @@ urls:
       url: /resume
     - text: Blog
       url: /blog
-    - text: Gallery
-      url: /gallery
+#    - text: Gallery
+#      url: /gallery
     - text: Shop
       url : /shop
     - text: Contact Me
@@ -27,7 +27,7 @@ author_bio: Hi, my name is Batuhan Edgüer.
 author_email: "batuhanedguer@gmail.com"
 author_location: Turkey
 author_website_url: https://bestsithineu.github.io
-typewrite-text: Hello, I’m Batuhan Edgüer, wellcome to my blog.
+typewrite-text: Hello, I’m Batuhan Edgüer, welcome to my blog. Since July 2020.
 
 author_work_experiences:
             - company_name: Yeditepe University / Andaç Hamamcı - Istanbul
