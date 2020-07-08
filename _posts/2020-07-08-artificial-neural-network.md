@@ -10,6 +10,7 @@ thumbnail: /assets/img/posts/python.png
 
 
 ### Hello everybody. Today I want to talk about ANN model example. 
+
 ##### First of all, I will not give you theoretical information about ANN in this post. For this post, you just need to know the algorithm and entry-level artificial intelligence and also you should have to install Anaconda or any python provider like pycharm or etc. (Source code can be found in the bottom line of this post.)
 
 There is a data about "Awesome Bank" and firstly I would explain this the issue.
