@@ -130,12 +130,12 @@ X = np.array(ct.fit_transform(X))
 Wait a second, why we need to do this one? Answer is very simple actually. If we did label encoding, our data will be like this;
 
 {% highlight ruby %}
-X\[:, 2] = le.fit_transform(X\[:, 2])
+X[:, 2] = le.fit_transform(X[:, 2])
 print(X)
 
-\> \[[619 0 0 ... 1 1 101348.88]
-     \[608 2 0 ... 0 1 112542.58]
-     \[772 1 1 ... 1 0 92888.52]
+> [[619 0 0 ... 1 1 101348.88]
+   [608 2 0 ... 0 1 112542.58]
+   [772 1 1 ... 1 0 92888.52]
 {% endhighlight %}
 The problem here is, since there are different numbers in the same column, the model will misunderstand the data to be in some kind of order, 0 < 1 < 2. But this isn’t the case at all. To overcome this problem, we used One Hot Encoder.
 Again check the data set with one hot encoding. And be careful to include these values in the first three columns, because the dummy variables are always created in the first columns.
@@ -143,10 +143,10 @@ Again check the data set with one hot encoding. And be careful to include these 
 {% highlight ruby %}
 print(X)
 
-> \> \[[1.0 0.0 0.0 ... 1 1 101348.88]
->      \[0.0 0.0 1.0 ... 0 1 112542.58]
->      \[1.0 0.0 0.0 ... 1 0 113931.57]
-> {% endhighlight %}
+> [[1.0 0.0 0.0 ... 1 1 101348.88]
+   [0.0 0.0 1.0 ... 0 1 112542.58]
+   [1.0 0.0 0.0 ... 1 0 113931.57]
+{% endhighlight %}
 
 So... France encoded with \[1, 0, 0], Spain encoded with \[0, 0, 1], and finally Germany \[0, 1, 0].
 
@@ -203,7 +203,8 @@ We create six neurons. But this six comes from actually nowhere, just experiment
   {% highlight ruby %}
   ann.compile(optimizer = 'adam', loss = 'binary_crossentropy', metrics = \['accuracy'])
   {% endhighlight %}
-  Parameters: 
+  
+Parameters: 
   	1. Optimizer: Choosing optimizer,
   	2. Loss: Choosing loss function (For binary outcome, loss function should be binary crossentropy,	
   	3. Metrics.
@@ -239,15 +240,13 @@ So our general accuracy is 86.46%. It's really good actually.
   y_pred = (y_pred > 0.5) # We add this line for rounding.
   print(np.concatenate((y_pred.reshape(len(y_pred),1), y_test.reshape(len(y_test),1)),1))
 
-\> \[[0 0]
-    \[0 1]
-    \[0 0] 
-
-\    ....
-
-\    \[0 0]
-    \[0 0]
-    \[0 0]]
+> [[0 0]
+   [0 1]
+   [0 0] 
+    ...
+   [0 0]
+   [0 0]
+   [0 0]]
 {% endhighlight %}
 Left of the vector shows prediction, and right of the vector shows real results
 
@@ -260,8 +259,8 @@ cm = confusion_matrix(y_test, y_pred)
 print(cm)
 print(accuracy_score(y_test, y_pred))
 
-\> \[[1514   81]
-     \[198  207]]
+> [[1514   81]
+   [198  207]]
 > 0.8605
 {% endhighlight %}
 
