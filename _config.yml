@@ -99,7 +99,7 @@ algolia:
   index_name: blog_posts # You can replace that with whatever name you want
   files_to_exclude: []
   nodes_to_index: 'article'
-  search_only_api_key: c204ff6fa69a8a704df6946a489e75d3
+  search_only_api_key: f73fba6211e0fcc42973e392979c2b2e
 
 # pagination of posts
 paginate: 4
