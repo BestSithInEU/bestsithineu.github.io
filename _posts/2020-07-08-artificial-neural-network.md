@@ -1,17 +1,16 @@
 ---
+title: Artificial Neural Network
 layout: post
 author: Batuhan Edgüer
-title: Artificial Neural Network
 category: Python
-date: 2020-07-08T12:19:20.613Z
+date: '2020-07-08 12:19:20 +0000'
 summary: Creating Artificial Neural Network with example
-thumbnail: /assets/img/posts/python.png
+thumbnail: "/assets/img/posts/python.png"
 ---
-
 
 ### Hello everybody. Today I want to talk about ANN model example. 
 
-##### First of all, I will not give you theoretical information about ANN in this post. For this post, you just need to know the algorithm and entry-level artificial intelligence and also you should have to install Anaconda or any python provider like pycharm or etc. (Source code can be found in the bottom line of this post.)
+##### First of all, I will not give you theoretical information about ANN in this post. For this post, you just need to know the algorithm and entry-level artificial intelligence and also you should have to install Anaconda or any python provider like pycharm or etc. [(Source code link.)](https://github.com/BestSithInEU/Artificial_Neural_Network_Example)
 
 There is a data about "Awesome Bank" and firstly I would explain this the issue.
 Bank is seen unusual churn rates (Customers leaving at unusually high rates). And they wanted to hire you and understand & solve this problem. When you first look at the data set, you may have difficulty understanding and so I will try to explain by giving examples as much as I can. Awesome Bank decided to create a test group, and there are ten thousand irrelevant people in this test group. But everything is fine, the bank has followed these customers for six months. And as a result, he shared some information of these customers. But what is this information?
