@@ -239,29 +239,33 @@ So our general accuracy is 86.46%. It's really good actually.
   y_pred = (y_pred > 0.5) # We add this line for rounding.
   print(np.concatenate((y_pred.reshape(len(y_pred),1), y_test.reshape(len(y_test),1)),1))
 
-  \> \[[0 0]
-      \[0 1]
-      \[0 0] 
+\> \[[0 0]
+    \[0 1]
+    \[0 0] 
 
-  \    ....
+\    ....
 
-  \    \[0 0]
-      \[0 0]
-      \[0 0]]
-  {% endhighlight %}
-  Left of the vector shows prediction, and right of the vector shows real results
+\    \[0 0]
+    \[0 0]
+    \[0 0]]
+{% endhighlight %}
+Left of the vector shows prediction, and right of the vector shows real results
+
 * Making the Confusion Matrix
-  {% highlight ruby %}
-  from sklearn.metrics import confusion_matrix, accuracy_score
-  cm = confusion_matrix(y_test, y_pred)
-  print(cm)
-  print(accuracy_score(y_test, y_pred))
 
-  > \[[1514   81]
-  >  \[ 198  207]]
-  > 0.8605
-  > {% endhighlight %}
-  > So 1514 correct predictions that the customer stay in the bank and 207 correct predictions that the customer leaves the bank. So our general accuracy is 86.05%
+
+{% highlight ruby %}
+from sklearn.metrics import confusion_matrix, accuracy_score
+cm = confusion_matrix(y_test, y_pred)
+print(cm)
+print(accuracy_score(y_test, y_pred))
+
+\> \[[1514   81]
+     \[198  207]]
+> 0.8605
+{% endhighlight %}
+
+So 1514 correct predictions that the customer stay in the bank and 207 correct predictions that the customer leaves the bank. So our general accuracy is 86.05%
 
 What a journey... If you have any comments or questions about this topic, please comment or contact me.
 Yours sincerely, Batuhan.
