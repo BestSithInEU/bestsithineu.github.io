@@ -5,7 +5,7 @@ title: Artificial Neural Network
 category: Python
 date: 2020-07-08T12:19:20.613Z
 summary: Creating Artificial Neural Network with example
-thumbnail: /assets/img/posts/python.jpg
+thumbnail: /assets/img/posts/python.png
 ---
 
 
