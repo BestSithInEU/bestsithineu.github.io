@@ -118,7 +118,7 @@ Or you can install these via Anaconda Navigator, sample video;
 <iframe width="560" height="315" src="https://www.youtube.com/embed/8JPvHI8tLPc" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 
-I want to divide the next part into three main headings
+I want to divide the next part into four main headings
 
 ## 1. Data Preprocessing.
 *  Importing Libraries
@@ -263,6 +263,8 @@ Epoch 100/100
 {% endhighlight %}
 So our general accuracy is 86.46%. It's really good actually.
 
+## 4. ## 4. Data Preprocessing.
+
 * Predicting the Test set results
 {% highlight ruby %}
 y_pred = ann.predict(X_test)
@@ -291,3 +293,5 @@ So 1514 correct predictions that the customer stay in the bank and 207 correct p
 
 What a journey... If you have any comments or questions about this topic, please comment or contact me.
 Yours sincerely, Batuhan.
+
+[Source](https://www.udemy.com/course/deeplearning/)
