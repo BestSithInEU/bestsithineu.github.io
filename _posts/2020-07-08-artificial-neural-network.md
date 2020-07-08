@@ -106,7 +106,7 @@ As I mentioned, the computer does not understand "Geography" and "Gender" sectio
   {% highlight ruby %}
   from sklearn.preprocessing import LabelEncoder
   le = LabelEncoder()
-  X\[:, 2] = le.fit_transform(X\[:, 2])
+  X[:, 2] = le.fit_transform(X\[:, 2])
   {% endhighlight %}
 
 Let's have a look our dataset again.
