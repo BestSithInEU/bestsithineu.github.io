@@ -1,8 +1,8 @@
 ---
 layout: post
 author: Batuhan Edgüer
-title: Artificial Neural Network
-date: 2020-07-08 12:19:20 +0000
+title: Artificial Neural Network1
+date: 2020-07-08T17:07:30.548Z
 thumbnail: /assets/img/posts/python.png
 category: Python
 summary: Creating Artificial Neural Network with example
