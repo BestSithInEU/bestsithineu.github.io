@@ -95,9 +95,9 @@ Let's have a look our new dataset (X) and dependent variable (y).
 {% highlight ruby %}
 print(X)
 
-\> \[619 'France' 'Female' ... 1 1 101348.88]
+> [619 'France' 'Female' ... 1 1 101348.88]
 print(y)
-> \[1 0 1 ... 1 1 0]
+> [1 0 1 ... 1 1 0]
 {% endhighlight %}
 
 As I mentioned, the computer does not understand "Geography" and "Gender" sections. So let's turn them into the format they will understand.
@@ -112,8 +112,7 @@ As I mentioned, the computer does not understand "Geography" and "Gender" sectio
 Let's have a look our dataset again.
 {% highlight ruby %}
 print(X)
-
-\> \[619 'France' 0 ... 1 1 101348.88]
+> [619 'France' 0 ... 1 1 101348.88]
 {% endhighlight %}
 
 So our function encoded the **female** as "0" randomly.
