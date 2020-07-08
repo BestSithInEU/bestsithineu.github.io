@@ -37,20 +37,20 @@ There is a preview of the data set;
       <thead>
         <tr>
           <th scope="col">#</th>
-          <th scope="col">RowNumber</th>
-          <th scope="col">CustomerId</th>
-          <th scope="col">Surname</th>
-          <th scope="col">CreditScore</th>
-          <th scope="col">Geography</th>
-          <th scope="col">Gender</th>
-          <th scope="col">Age</th>
-          <th scope="col">Tenure</th>
-          <th scope="col">Balance</th>
-          <th scope="col">NumOfProducts</th>
-          <th scope="col">HasCrCard</th>
-          <th scope="col">BalIsActiveMemberance</th>
-          <th scope="col">EstimatedSalary</th>
-          <th scope="col">Exited</th>
+          <th scope="col">|RowNumber|</th>
+          <th scope="col">|CustomerId|</th>
+          <th scope="col">|Surname|</th>
+          <th scope="col">|CreditScore|</th>
+          <th scope="col">|Geography|</th>
+          <th scope="col">|Gender|</th>
+          <th scope="col">|Age|</th>
+          <th scope="col">|Tenure|</th>
+          <th scope="col">|Balance|</th>
+          <th scope="col">|NumOfProducts|</th>
+          <th scope="col">|HasCrCard|</th>
+          <th scope="col">|BalIsActiveMemberance|</th>
+          <th scope="col">|EstimatedSalary|</th>
+          <th scope="col">|Exited|</th>
         </tr>
       </thead>
       <tbody>
