@@ -95,10 +95,10 @@ Let's have a look our new dataset (X) and dependent variable (y).
 {% highlight ruby %}
 print(X)
 
-> \[619 'France' 'Female' ... 1 1 101348.88]
-> print(y)
+\> \[619 'France' 'Female' ... 1 1 101348.88]
+print(y)
 > \[1 0 1 ... 1 1 0]
-> {% endhighlight %}
+{% endhighlight %}
 
 As I mentioned, the computer does not understand "Geography" and "Gender" sections. So let's turn them into the format they will understand.
 
@@ -113,18 +113,19 @@ Let's have a look our dataset again.
 {% highlight ruby %}
 print(X)
 
-> \[619 'France' 0 ... 1 1 101348.88]
-> {% endhighlight %}
+\> \[619 'France' 0 ... 1 1 101348.88]
+{% endhighlight %}
 
 So our function encoded the **female** as "0" randomly.
 
 * One Hot Encoding the "Geography" column
-  {% highlight ruby %}
-  from sklearn.compose import ColumnTransformer
-  from sklearn.preprocessing import OneHotEncoder
-  ct = ColumnTransformer(transformers=\[('encoder', OneHotEncoder(), [1])], remainder = 'passthrough')
-  X = np.array(ct.fit_transform(X))
-  {% endhighlight %}
+
+{% highlight ruby %}
+from sklearn.compose import ColumnTransformer
+from sklearn.preprocessing import OneHotEncoder
+ct = ColumnTransformer(transformers=\[('encoder', OneHotEncoder(), [1])], remainder = 'passthrough')
+X = np.array(ct.fit_transform(X))
+{% endhighlight %}
 
 Wait a second, why we need to do this one? Answer is very simple actually. If we did label encoding, our data will be like this;
 
@@ -132,19 +133,19 @@ Wait a second, why we need to do this one? Answer is very simple actually. If we
 X\[:, 2] = le.fit_transform(X\[:, 2])
 print(X)
 
-> \[[619 0 0 ... 1 1 101348.88]
->    \[608 2 0 ... 0 1 112542.58]
->    \[772 1 1 ... 1 0 92888.52]
-> {% endhighlight %}
-> The problem here is, since there are different numbers in the same column, the model will misunderstand the data to be in some kind of order, 0 < 1 < 2. But this isn’t the case at all. To overcome this problem, we used One Hot Encoder.
-> Again check the data set with one hot encoding. And be careful to include these values in the first three columns, because the dummy variables are always created in the first columns.
+\> \[[619 0 0 ... 1 1 101348.88]
+     \[608 2 0 ... 0 1 112542.58]
+     \[772 1 1 ... 1 0 92888.52]
+{% endhighlight %}
+The problem here is, since there are different numbers in the same column, the model will misunderstand the data to be in some kind of order, 0 < 1 < 2. But this isn’t the case at all. To overcome this problem, we used One Hot Encoder.
+Again check the data set with one hot encoding. And be careful to include these values in the first three columns, because the dummy variables are always created in the first columns.
 
 {% highlight ruby %}
 print(X)
 
-> \[[1.0 0.0 0.0 ... 1 1 101348.88]
->   \[0.0 0.0 1.0 ... 0 1 112542.58]
->   \[1.0 0.0 0.0 ... 1 0 113931.57]
+> \> \[[1.0 0.0 0.0 ... 1 1 101348.88]
+>      \[0.0 0.0 1.0 ... 0 1 112542.58]
+>      \[1.0 0.0 0.0 ... 1 0 113931.57]
 > {% endhighlight %}
 
 So... France encoded with \[1, 0, 0], Spain encoded with \[0, 0, 1], and finally Germany \[0, 1, 0].
@@ -194,10 +195,7 @@ We create six neurons. But this six comes from actually nowhere, just experiment
   {% endhighlight %}
   If we look dependent variable again which is "Exited, since we want to predict binary variable (zero or one) we only need one neuron.  And activation function of the output layer should be sigmoid activation function.
 
-
-  ![Sigmoid vs ReuLU](https://miro.medium.com/max/1452/1*XxxiA0jJvPrHEJHD4z893g.png)
-
-##### \    Figure 1: Sigmoid vs ReuLU
+  ![Sigmoid vs ReuLU](https://miro.medium.com/max/1452/1*XxxiA0jJvPrHEJHD4z893g.png "Figure 1.")
 
 ## 3.  Training the ANN
 
@@ -211,39 +209,45 @@ We create six neurons. But this six comes from actually nowhere, just experiment
   	3. Metrics.
   	
 * Training the ANN on the Training set
-  {% highlight ruby %}
-  ann.fit(X_train, y_train, batch_size = 32, epochs = 100)
-  {% endhighlight %}
-  Batch learning more efficient and more performant when training ANN. 
-  After executing the code, we should see this;
-  {% highlight ruby %}
-  ...
-  Epoch 99/100
-  250/250 \[==============================] - 0s 2ms/step - loss: 0.3352 - accuracy: 0.8648
-  Epoch 100/100
-  250/250 \[==============================] - 0s 2ms/step - loss: 0.3355 - accuracy: 0.8646
-  {% endhighlight %}
-  So our general accuracy is 86.46%. It's really good actually.
+
+
+{% highlight ruby %}
+ann.fit(X_train, y_train, batch_size = 32, epochs = 100)
+{% endhighlight %}
+
+
+Batch learning more efficient and more performant when training ANN. 
+After executing the code, we should see this;
+
+
+{% highlight ruby %}
+...
+Epoch 99/100
+250/250 \[==============================] - 0s 2ms/step - loss: 0.3352 - accuracy: 0.8648
+Epoch 100/100
+250/250 \[==============================] - 0s 2ms/step - loss: 0.3355 - accuracy: 0.8646
+{% endhighlight %}
+So our general accuracy is 86.46%. It's really good actually.
 
 ## 4.  Data Preprocessing.
 
 * Predicting the Test set results
+
+
   {% highlight ruby %}
   y_pred = ann.predict(X_test)
   y_pred = (y_pred > 0.5) # We add this line for rounding.
   print(np.concatenate((y_pred.reshape(len(y_pred),1), y_test.reshape(len(y_test),1)),1))
 
-  > \[[0 0]
-  >    \[0 1]
-  >    \[0 0]
+  \> \[[0 0]
+      \[0 1]
+      \[0 0] 
 
-  ```
-  ...
-  ```
+  \    ....
 
-     \[0 0]
-     \[0 0]
-     \[0 0]]
+  \    \[0 0]
+      \[0 0]
+      \[0 0]]
   {% endhighlight %}
   Left of the vector shows prediction, and right of the vector shows real results
 * Making the Confusion Matrix
@@ -254,7 +258,7 @@ We create six neurons. But this six comes from actually nowhere, just experiment
   print(accuracy_score(y_test, y_pred))
 
   > \[[1514   81]
-  >    \[ 198  207]]
+  >  \[ 198  207]]
   > 0.8605
   > {% endhighlight %}
   > So 1514 correct predictions that the customer stay in the bank and 207 correct predictions that the customer leaves the bank. So our general accuracy is 86.05%
