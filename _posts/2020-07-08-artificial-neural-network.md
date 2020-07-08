@@ -68,7 +68,6 @@ If you don't have these libraries, you can install with these steps;
   pip install keras
   {% endhighlight %}
 
-
 Or you can install these via Anaconda Navigator, sample video;
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/8JPvHI8tLPc" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
@@ -133,20 +132,20 @@ Wait a second, why we need to do this one? Answer is very simple actually. If we
 X\[:, 2] = le.fit_transform(X\[:, 2])
 print(X)
 
-> [[619 0 0 ... 1 1 101348.88]
-   [608 2 0 ... 0 1 112542.58]
-   [772 1 1 ... 1 0 92888.52]
-{% endhighlight %}
-The problem here is, since there are different numbers in the same column, the model will misunderstand the data to be in some kind of order, 0 < 1 < 2. But this isn’t the case at all. To overcome this problem, we used One Hot Encoder.
-Again check the data set with one hot encoding. And be careful to include these values in the first three columns, because the dummy variables are always created in the first columns.
+> \[[619 0 0 ... 1 1 101348.88]
+>    \[608 2 0 ... 0 1 112542.58]
+>    \[772 1 1 ... 1 0 92888.52]
+> {% endhighlight %}
+> The problem here is, since there are different numbers in the same column, the model will misunderstand the data to be in some kind of order, 0 < 1 < 2. But this isn’t the case at all. To overcome this problem, we used One Hot Encoder.
+> Again check the data set with one hot encoding. And be careful to include these values in the first three columns, because the dummy variables are always created in the first columns.
 
 {% highlight ruby %}
 print(X)
 
-> [[1.0 0.0 0.0 ... 1 1 101348.88]
-  [0.0 0.0 1.0 ... 0 1 112542.58]
-  [1.0 0.0 0.0 ... 1 0 113931.57]
-{% endhighlight %}
+> \[[1.0 0.0 0.0 ... 1 1 101348.88]
+>   \[0.0 0.0 1.0 ... 0 1 112542.58]
+>   \[1.0 0.0 0.0 ... 1 0 113931.57]
+> {% endhighlight %}
 
 So... France encoded with \[1, 0, 0], Spain encoded with \[0, 0, 1], and finally Germany \[0, 1, 0].
 
@@ -194,9 +193,11 @@ We create six neurons. But this six comes from actually nowhere, just experiment
   ann.add(tf.keras.layers.Dense(units=1, activation='sigmoid'))
   {% endhighlight %}
   If we look dependent variable again which is "Exited, since we want to predict binary variable (zero or one) we only need one neuron.  And activation function of the output layer should be sigmoid activation function.
+
+
   ![Sigmoid vs ReuLU](https://miro.medium.com/max/1452/1*XxxiA0jJvPrHEJHD4z893g.png)
 
-##### Figure 1: Sigmoid vs ReuLU
+##### \    Figure 1: Sigmoid vs ReuLU
 
 ## 3.  Training the ANN
 
@@ -224,7 +225,7 @@ We create six neurons. But this six comes from actually nowhere, just experiment
   {% endhighlight %}
   So our general accuracy is 86.46%. It's really good actually.
 
-## 4. ## 4. Data Preprocessing.
+## 4.  Data Preprocessing.
 
 * Predicting the Test set results
   {% highlight ruby %}
@@ -232,13 +233,17 @@ We create six neurons. But this six comes from actually nowhere, just experiment
   y_pred = (y_pred > 0.5) # We add this line for rounding.
   print(np.concatenate((y_pred.reshape(len(y_pred),1), y_test.reshape(len(y_test),1)),1))
 
-  > [[0 0]
-     [0 1]
-     [0 0]
-      ...
-     [0 0]
-     [0 0]
-     [0 0]]
+  > \[[0 0]
+  >    \[0 1]
+  >    \[0 0]
+
+  ```
+  ...
+  ```
+
+     \[0 0]
+     \[0 0]
+     \[0 0]]
   {% endhighlight %}
   Left of the vector shows prediction, and right of the vector shows real results
 * Making the Confusion Matrix
@@ -247,11 +252,12 @@ We create six neurons. But this six comes from actually nowhere, just experiment
   cm = confusion_matrix(y_test, y_pred)
   print(cm)
   print(accuracy_score(y_test, y_pred))
-  > [[1514   81]
-     [ 198  207]]
+
+  > \[[1514   81]
+  >    \[ 198  207]]
   > 0.8605
-  {% endhighlight %}
-  So 1514 correct predictions that the customer stay in the bank and 207 correct predictions that the customer leaves the bank. So our general accuracy is 86.05%
+  > {% endhighlight %}
+  > So 1514 correct predictions that the customer stay in the bank and 207 correct predictions that the customer leaves the bank. So our general accuracy is 86.05%
 
 What a journey... If you have any comments or questions about this topic, please comment or contact me.
 Yours sincerely, Batuhan.
