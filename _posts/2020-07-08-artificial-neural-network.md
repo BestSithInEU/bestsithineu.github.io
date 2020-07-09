@@ -11,7 +11,7 @@ summary: Creating Artificial Neural Network with example
 
 ##### First of all, I will not give you theoretical information about ANN in this post. For this post, you just need to know the algorithm and entry-level artificial intelligence and also you should have to install Anaconda or any python provider like pycharm or etc. [(Source code link.)](https://github.com/BestSithInEU/Artificial_Neural_Network_Example)
 
-There is a data about "Awesome Bank" and firstly I would explain this the issue.
+There is a data about "Awesome Bank" and firstly I would explain the issue.
 Bank is seen unusual churn rates (Customers leaving at unusually high rates). And they wanted to hire you and understand & solve this problem. When you first look at the data set, you may have difficulty understanding and so I will try to explain by giving examples as much as I can. Awesome Bank decided to create a test group, and there are ten thousand irrelevant people in this test group. But everything is fine, the bank has followed these customers for six months. And as a result, he shared some information of these customers. But what is this information?
 
 1. CostermId,
@@ -194,7 +194,7 @@ We create six neurons. But this six comes from actually nowhere, just experiment
   {% endhighlight %}
   If we look dependent variable again which is "Exited, since we want to predict binary variable (zero or one) we only need one neuron.  And activation function of the output layer should be sigmoid activation function.
 
-  ![Sigmoid vs ReuLU](https://miro.medium.com/max/1452/1*XxxiA0jJvPrHEJHD4z893g.png "Figure 1.")
+  ![Sigmoid vs ReuLU](https://miro.medium.com/max/1452/1*XxxiA0jJvPrHEJHD4z893g.png "Figure 1: Sigmoid vs ReLU")
 
 ## 3.  Training the ANN
 
