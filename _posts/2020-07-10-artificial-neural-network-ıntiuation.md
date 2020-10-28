@@ -1,7 +1,7 @@
 ---
 layout: post
 author: Batuhan Edgüer
-title: Artificial Neural Network Intiuation
+title: Artificial Neural Network (Theoretical)
 date: 2020-07-10T04:50:02.698Z
 thumbnail: /assets/img/posts/python.png
 category: Python
